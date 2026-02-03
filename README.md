@@ -1,78 +1,134 @@
-# API-de-Gestao-de-Eventos
-API de Eventos
+# API-de-Gestao-de-Eventos 🎉📅
 
-Uma API de gerenciamento de eventos construída em Node.js/TypeScript (ou AdonisJS), organizada seguindo uma arquitetura em camadas (Controller → Service → Repository). Este projeto permite gerenciar eventos e usuários, com autenticação, validação de dados e tratamento de erros centralizado.
+API REST para gerenciamento de eventos e usuários, desenvolvida em **Node.js com TypeScript**, organizada seguindo uma **arquitetura em camadas (Controller → Service → Repository)**.
 
-🏗 Estrutura do Projeto
+O projeto simula um cenário real de backend, aplicando boas práticas de organização de código, autenticação, validação de dados e tratamento centralizado de erros.
+
+---
+
+## 🏗 Estrutura do Projeto
+
 app/
- ├── Controllers/Http       # Recebe requisições HTTP e chama Services
- ├── Services               # Lógica de negócio da aplicação
- ├── Repositories           # Persistência de dados
- ├── Models                 # Modelos de entidades (Event, User, etc)
- ├── Validators             # Validação de entrada (Zod ou Adonis Validator)
- ├── Middleware             # Middlewares (ex: autenticação)
- └── Exceptions             # Tratamento padronizado de erros
+├── Controllers/Http # Recebe requisições HTTP e delega para Services
+├── Services # Lógica de negócio da aplicação
+├── Repositories # Persistência e acesso a dados
+├── Models # Modelos de entidades (Event, User, etc.)
+├── Validators # Validação de entrada de dados
+├── Middleware # Middlewares (ex: autenticação JWT)
+└── Exceptions # Tratamento padronizado de erros
 
-⚙️ Funcionalidades
 
-CRUD completo de eventos: create, read, update e delete.
+A separação em camadas garante **manutenção facilitada, testabilidade e escalabilidade**.
 
-Gestão de usuários e autenticação via JWT.
+---
 
-Validação de entrada de dados para garantir consistência.
+## ⚙️ Funcionalidades
 
-Estrutura modular que facilita manutenção e expansão.
+- CRUD completo de eventos (criar, listar, atualizar e remover)
+- Gestão de usuários
+- Autenticação e autorização via JWT
+- Validação de dados de entrada
+- Tratamento centralizado de erros
+- Estrutura modular e extensível
 
-🛠 Tecnologias
+---
 
-Node.js / TypeScript
+## 🛠 Tecnologias Utilizadas
 
-Express ou AdonisJS
+- Node.js  
+- TypeScript  
+- Express *(ou AdonisJS, conforme implementação)*  
+- Banco de dados: MySQL / PostgreSQL / MongoDB  
+- Validação de dados: Zod ou Validator do AdonisJS  
+- Autenticação: JWT (JSON Web Token)  
 
-Banco de dados: MySQL / PostgreSQL / MongoDB
+---
 
-Validação: Zod ou Validator do AdonisJS
+## 🚀 Instalação e Execução
 
-Autenticação: JWT
+1. Clone o repositório:
+```bash
+git clone https://github.com/MatheusGIThu/API-de-Gestao-de-Eventos.git
+Acesse o diretório do projeto:
 
-🚀 Instalação
-# Clone o repositório
-git clone https://github.com/SEU_USUARIO/nome-do-projeto.git
-cd nome-do-projeto
+cd API-de-Gestao-de-Eventos
+Instale as dependências:
 
-# Instale dependências
 npm install
+Configure as variáveis de ambiente:
 
-# Configure as variáveis de ambiente
 cp .env.example .env
-# Edite .env com as informações do seu banco de dados e JWT
+Edite o arquivo .env com as informações do banco de dados e chave JWT.
 
-# Rode a aplicação
+Execute a aplicação:
+
 npm run dev
+```
+### 📌 Endpoints Principais
+#### 🎉 Eventos
+- Método	Endpoint	Descrição
+- POST	/events	Criar um novo evento
+- GET	/events	Listar todos os eventos
+- GET	/events/:id	Obter detalhes de um evento
+- PUT	/events/:id	Atualizar um evento
+- DELETE	/events/:id	Excluir um evento
 
-📌 Endpoints Principais
-Eventos
-Método	Endpoint	Descrição
-POST	/events	Criar um novo evento
-GET	/events	Listar todos os eventos
-GET	/events/:id	Obter detalhes de um evento
-PUT	/events/:id	Atualizar um evento
-DELETE	/events/:id	Excluir um evento
-Usuários
-Método	Endpoint	Descrição
-POST	/users	Criar um novo usuário
-POST	/auth/login	Login de usuário (JWT)
-GET	/users/:id	Obter detalhes do usuário
-🔒 Autenticação
+---
 
-JWT (JSON Web Token) para proteger rotas privadas.
+### 👤 Usuários
+#### Método	Endpoint	Descrição
+- POST	/users	Criar um novo usuário
+- POST	/auth/login	Autenticação de usuário (JWT)
+- GET	/users/:id	Obter detalhes do usuário
 
-Middlewares aplicados nos endpoints que requerem autenticação.
+---
+  
+## 🔒 Autenticação
+- Utiliza JWT (JSON Web Token) para proteção de rotas privadas
 
-💡 Observações
+- Middlewares aplicados para garantir acesso apenas a usuários autenticados
 
-Seguindo a arquitetura Controller → Service → Repository, a lógica de negócio nunca fica no controller.
+- Tokens devem ser enviados via header Authorization: Bearer <token>
 
-Validações são centralizadas nos Validators.
+---
 
-Tratamento de erros centralizado em Exceptions/AppError.ts.
+## 💡 Observações Técnicas
+- Controllers são responsáveis apenas por receber requisições e retornar respostas
+
+- Toda a lógica de negócio é centralizada nos Services
+
+- A camada Repository abstrai o acesso ao banco de dados
+
+- Validações ficam centralizadas nos Validators
+
+- Erros são tratados de forma padronizada em Exceptions/AppError.ts
+
+---
+
+## 📚 Aprendizados
+- Desenvolvimento de APIs REST com Node.js e TypeScript
+
+- Aplicação de arquitetura em camadas
+
+- Implementação de autenticação JWT
+
+- Boas práticas de organização e manutenção de código
+
+- Validação de dados e tratamento de erros
+
+---
+
+## 🚧 Próximas Melhorias
+- Testes automatizados
+
+- Documentação com Swagger
+
+- Paginação e filtros
+
+- Deploy em ambiente cloud
+
+---
+
+## 👨‍💻 Autor
+Desenvolvido por Matheus Silveira Feques
+GitHub: https://github.com/MatheusGIThu
