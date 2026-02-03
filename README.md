@@ -8,15 +8,17 @@ O projeto simula um cenário real de backend, aplicando boas práticas de organi
 
 ## 🏗 Estrutura do Projeto
 
+```text
 app/
-├── Controllers/Http # Recebe requisições HTTP e delega para Services
-├── Services # Lógica de negócio da aplicação
-├── Repositories # Persistência e acesso a dados
-├── Models # Modelos de entidades (Event, User, etc.)
-├── Validators # Validação de entrada de dados
-├── Middleware # Middlewares (ex: autenticação JWT)
-└── Exceptions # Tratamento padronizado de erros
-
+├── Controllers/
+│   └── Http/            # Recebe requisições HTTP e delega para Services
+├── Services/            # Lógica de negócio da aplicação
+├── Repositories/        # Persistência e acesso a dados
+├── Models/              # Modelos de entidades (Event, User, etc.)
+├── Validators/          # Validação de entrada de dados
+├── Middleware/          # Middlewares (ex: autenticação JWT)
+└── Exceptions/          # Tratamento padronizado de erros
+```
 
 A separação em camadas garante **manutenção facilitada, testabilidade e escalabilidade**.
 
