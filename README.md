@@ -40,7 +40,7 @@ A separação em camadas garante **manutenção facilitada, testabilidade e esca
 - Node.js  
 - TypeScript  
 - Express
-- Banco de dados: MySQL / PostgreSQL / MongoDB  
+- Banco de dados: PostgreSQL
 - Autenticação: JWT (JSON Web Token)  
 
 ---
