@@ -39,7 +39,7 @@ A separação em camadas garante **manutenção facilitada, testabilidade e esca
 
 - Node.js  
 - TypeScript  
-- Express *(ou AdonisJS, conforme implementação)*  
+- Express
 - Banco de dados: MySQL / PostgreSQL / MongoDB  
 - Validação de dados: Zod ou Validator do AdonisJS  
 - Autenticação: JWT (JSON Web Token)  
